@@ -1,7 +1,12 @@
 import BgPicture from "@/app/Public/Bg-Pic.jpg";
 import Link from "next/link";
 
-const BgPic = ({ PageHeading, PageName }: any) => {
+interface BgPicProps {
+  PageHeading: string;
+  PageName: string;
+}
+
+const BgPic: React.FC<BgPicProps> = ({ PageHeading, PageName }) => {
   return (
     <section
   className="bg-cover bg-center h-64  flex items-center justify-center"
