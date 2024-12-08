@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0D0D0D;
     --foreground: #ededed;
   }
 }
@@ -25,3 +25,12 @@ body {
     text-wrap: balance;
   }
 }
+
+.wrapper{
+  @apply max-w-7xl mx-4 sm:mx-6 md:mx-8 lg:mx-auto
+}
+
+.font{
+  @apply font-normal hover:font-bold text-[16px] leading-6 text-[#FFFFFF] hover:text-[#FF9F0D]
+}
+
