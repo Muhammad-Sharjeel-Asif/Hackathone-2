@@ -1,37 +1,65 @@
 import Image from "next/image";
 import { IoPlayOutline } from "react-icons/io5";
-
+import BgPic from "@/app/Components/BgPic";
+import Pic01 from "../Components/AboutUs/AboutUsPic01.jpg";
+import Pic02 from "../Components/Footer/Chicken.jpg";
+import Pic03 from "../Components/AboutUs/AboutUsPic02.jpg";
+import Pic04 from "../Components/AboutUs/AboutUsPic03.jpg";
 
 export default function Aboutus() {
   return (
-    <div>
-      <div className="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10">
-        <Image
-          src="/heropic.png"
-          alt="Banner Image"
-          width={1920}
-          height={410}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="min-h-[350px] relative z-50 h-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center p-6">
-          <h2 className="text-white md:text-5xl text-3xl font-bold mb-8">
-            About Us
-          </h2>
-          <div className="flex items-center space-x-2 text-white">
-            <a href="/" className="text-white">Home</a>
-            <span className="text-white"> &gt; </span>
-            <a href="/about" className="text-orange-500">About</a>
+    <div className="min-h-screen bg-[#FFFFFF]">
+
+      <BgPic PageHeading='About Us' PageName='About' />
+
+      {/* Second Section: Content and Buttons */}
+      <section className="text-white body-font hidden">
+        <div className="h-[734px] w-[1320px]"> {/* min-h-[734px] min-w-[1320px] */}
+          <div className="flex h-[734px] bg-red-600 flex-wrap"> {/* min-w-[669px] min-h-[734px] */}
+            <div>
+              <Image src={Pic01} alt="Chicken" height={536} width={336}></Image>
+            </div>
+            <div className="">
+              <Image src={Pic02} alt="Chicken" height={271} width={309} className="object-contain"></Image>
+              <Image src={Pic03} alt="Chicken" height={382} width={309}></Image>
+            </div>
+
           </div>
         </div>
-      </div>
-      {/* Second Section: Content and Buttons */}
-      <section className="text-white body-font">
+
+        {/* <div className="text-center h-[734px] w-[1320px]">
+          <h2 className="text-[#333333] text-5xl font-bold">Why Choose us</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. </p>
+          <section
+            className="bg-cover bg-center h-[386px]  flex items-center justify-center"
+            style={{
+              backgroundImage: `url(${Pic04.src})`,
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            }}
+          ></section>
+        </div> */}
+
+        <section className="text-white body-font">
+        <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col w-[579px]">
+          <h1 className="text-black text-3xl text-bold mt-3">Why Choose Us</h1>
+          <p className="text-black text-center mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
+            pellentesque bibendum non dui volutpat fringilla bibendum.</p>
+          <Image
+            src={Pic04}
+            // className="mb-10 object-cover object-center w-1320px h-386px mt-1552px ml-300px mt-10"
+            alt="hero"
+            width={1320} height={386}
+          />
+        </div>
+      </section>
+
+
         <div className="container mx-auto flex px-5 py-24">
           <div className="flex flex-col md:flex-row items-center md:space-x-4 mt-2 ml-2">
             <Image
               className="object-cover object-center w-336px h-536px mt-530px ml-300px radius-6px"
               alt="hero"
-              src= "/aboutus.png" width={309} height={536} 
+              src="/aboutus.png" width={309} height={536}
             />
           </div>
           {/* Right Images */}
@@ -81,76 +109,76 @@ export default function Aboutus() {
       {/* Third Section */}
       <section className="text-white body-font">
         <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col w-[579px]">
-            <h1 className="text-black text-3xl text-bold mt-3">Why Choose Us</h1>
-            <p className="text-black text-center mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam 
+          <h1 className="text-black text-3xl text-bold mt-3">Why Choose Us</h1>
+          <p className="text-black text-center mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
             pellentesque bibendum non dui volutpat fringilla bibendum.</p>
           <Image
             className="mb-10 object-cover object-center w-1320px h-386px mt-1552px ml-300px mt-10"
             alt="hero"
-            src = "/about.png"
+            src="/about.png"
             width={1320} height={386}
           />
         </div>
       </section>
       {/* Fourth section */}
       <section className="text-white body-font">
-  <div className="container px-3 py-20 mx-auto">
-    <div className="flex flex-wrap -m-4">
-      <div className="p-4 md:w-1/3">
-        <div className="h-full  flex justify-center items-center  flex-col border-2 rounded-lg overflow-hidden">
-          <Image
-        
-            src="/student.png"
-            width={80} height={80}
-            alt="blog"
-          />
-          <div className="p-6">
-            <h1 className="title-font text-lg font-medium text-black mb-2 text-bold text-center">
-            BEST CHEF
-            </h1>
-            <p className="leading-relaxed mb-3 text-center text-black">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat</p>
+        <div className="container px-3 py-20 mx-auto">
+          <div className="flex flex-wrap -m-4">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full  flex justify-center items-center  flex-col border-2 rounded-lg overflow-hidden">
+                <Image
+
+                  src="/student.png"
+                  width={80} height={80}
+                  alt="blog"
+                />
+                <div className="p-6">
+                  <h1 className="title-font text-lg font-medium text-black mb-2 text-bold text-center">
+                    BEST CHEF
+                  </h1>
+                  <p className="leading-relaxed mb-3 text-center text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat</p>
+                </div>
+              </div>
             </div>
-        </div>
-      </div>
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2 flex justify-center items-center  flex-col rounded-lg overflow-hidden">
-          <Image
-            className=""
-            src="/coffee.png"
-            width={80} height={80}
-            alt="blog"
-          />
-          <div className="p-6">
-            <h1 className="title-font text-lg font-medium text-black mb-2 text-bold text-center">
-            120 Item food
-            </h1>
-            <p className="leading-relaxed mb-3 text-center text-black">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat</p>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 flex justify-center items-center  flex-col rounded-lg overflow-hidden">
+                <Image
+                  className=""
+                  src="/coffee.png"
+                  width={80} height={80}
+                  alt="blog"
+                />
+                <div className="p-6">
+                  <h1 className="title-font text-lg font-medium text-black mb-2 text-bold text-center">
+                    120 Item food
+                  </h1>
+                  <p className="leading-relaxed mb-3 text-center text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2  flex justify-center items-center  flex-col rounded-lg overflow-hidden">
+                <Image
+                  className=" flex flex-col justify-center items-center"
+                  src="/man.png"
+                  width={80} height={80}
+                  alt="blog"
+
+                />
+                <div className="p-6">
+                  <h1 className="title-font text-lg font-medium text-black mb-2 text-bold text-center">
+                    Clean Environment
+                  </h1>
+                  <p className="leading-relaxed mb-3 text-center text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="p-4 md:w-1/3">
-        <div className="h-full border-2  flex justify-center items-center  flex-col rounded-lg overflow-hidden">
-          <Image
-            className=" flex flex-col justify-center items-center"
-            src="/man.png"
-            width={80} height={80}
-            alt="blog"
-            
-          />
-          <div className="p-6">
-            <h1 className="title-font text-lg font-medium text-black mb-2 text-bold text-center">
-            Clean Environment
-            </h1>
-            <p className="leading-relaxed mb-3 text-center text-black">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat</p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
-  </div>
-</section>
-</div>
   );
 }
