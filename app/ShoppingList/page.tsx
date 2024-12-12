@@ -1,6 +1,3 @@
-'use client';
-
-import React, { useState } from 'react';
 import Image from 'next/image';
 import Pic01 from '@/app/Components/ShoppingList/ShoppingList01.jpg';
 import Pic02 from '@/app/Components/ShoppingList/ShoppingList02.jpg';
@@ -22,8 +19,6 @@ const initialCartItems = [
 ];
 
 const ShoppingCart: React.FC = () => {
-    const [cartItems, setCartItems] = useState(initialCartItems);
-
     return (
         <div className="bg-white font-sans text-[#333333]">
 
@@ -41,7 +36,7 @@ const ShoppingCart: React.FC = () => {
                         </tr>
                     </thead>
                     <tbody className='text-[#333333]'>
-                        {cartItems.map((item, index) => (
+                        {initialCartItems.map((item, index) => (
                             <tr key={index} className="border-b">
                                 <td className="p-4 flex items-center">
                                     <Image src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded mr-4" width={93.14} height={97.13} />
@@ -68,7 +63,7 @@ const ShoppingCart: React.FC = () => {
                     </tbody>
                 </table>
 
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mt-10 min-h-[338px] gap-x-5">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mt-10 min-h-[338px] gap-x-5 mb-12">
 
                     <div className="w-full lg:w-1/2 lg:mb-0 lg:min-h-[185px] h-auto">
                         <h2 className="font-bold text-[32px] leading-10 mb-5">Coupon Code</h2>
