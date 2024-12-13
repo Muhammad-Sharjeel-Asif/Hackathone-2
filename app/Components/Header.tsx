@@ -7,7 +7,7 @@ import Premium from '@/app/Public/Tote.png'
 export default function Header() {
     return (
         <header className="h-[90px] flex-wrap flex items-center">  {/* w-[1920px] */}
-            <div className="flex h-8 flex-1 justify-around items-center min-w-[1320px]">  {/* w-[1320px] */}
+            <div className="flex h-8 flex-1 justify-around items-center w-[1320px] lg:min-w-[1320px]">  {/* w-[1320px] */}
                 <div className="text-2xl w-[109px] h-8 font-bold font-[Helvetica
 ]">Food<span className="text-[#FF9F0D]">tuck</span></div>
 

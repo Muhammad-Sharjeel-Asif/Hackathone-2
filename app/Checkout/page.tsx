@@ -1,227 +1,179 @@
-'use client'
-import Hero from "../Hero/page";
+// import Hero from "../Hero/page";
 import Image from "next/image";
+import CaretLeft from "@/app/Public/CaretLeft.png"
+import CaretRight from "@/app/Public/CaretRight.png"
+import Arrow from "@/app/Public/ArrowRight.png"
+import Pic01 from "@/app/Components/Checkout01.jpg"
+import BgPic from '../Components/BgPic';
 
-
-export default function CheckoutPage() {
+export default function Checkout() {
   return (
-<>
-<div>
-  <Hero/>
+    <section className="bg-white font-sans text-[#333333]">
 
-<div className="container mx-auto px-4 py-8 my-[120px]">
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="space-y-6">
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Shipping Address</h2>
-            <div className="grid gap-4">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                    First name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                    Last name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    
-                  />
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    
-                  />
-                </div>
-              </div>
+      <BgPic PageHeading='Checkout Page' PageName='Checkout' />
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    
-                  />
-                </div>
-                <div>
-                  <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">
-                    Country
-                  </label>
-                  <select
-                    id="country"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  >
-                    <option value="">Choose country</option>
-                    <option value="us">United States</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="ca">Canada</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-1">
-                    City
-                  </label>
-                  <input
-                    type="text"
-                    id="city"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="Choose city"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 mb-1">
-                    Zip code
-                  </label>
-                  <input
-                    type="text"
-                    id="zipCode"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="address1" className="block text-sm font-medium text-gray-700 mb-1">
-                  Address 1
-                </label>
-                <input
-                  type="text"
-                  id="address1"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  
-                />
-              </div>
-
-              <div>
-                <label htmlFor="address2" className="block text-sm font-medium text-gray-700 mb-1">
-                  Address 2
-                </label>
-                <input
-                  type="text"
-                  id="address2"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  
-                />
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Billing Address</h2>
-            <div className="flex items-center space-x-2">
+      <div className="flex flex-col md:flex-row p-24 gap-x-8">
+        {/* Left Section - Shipping and Billing Address */}
+        <div className="flex-1 ml- w-2/3 lg:min-w-2/3">
+          <h2 className="text-xl font-bold mb-6">Shipping Address</h2>
+          <form className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* First Name and Last Name */}
+            <div>
+              <label className="block  font-medium mb-1">First name</label>
               <input
-                type="checkbox"
-                id="sameAsShipping"
-                className="h-4 w-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
-              />
-              <label htmlFor="sameAsShipping" className="text-sm text-gray-700">
-                Same as shipping address
-              </label>
+                type="text"
+                className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2" />
             </div>
+            <div>
+              <label className="block  font-medium mb-1">Last name</label>
+              <input
+                type="text"
+                className="w-full border border-gray-300  h-14 lg:min-h-14 px-4 py-2" />
+            </div>
+
+            {/* Email Address and Phone Number */}
+            <div>
+              <label className="block  font-medium mb-1">Email address</label>
+              <input
+                type="email"
+                className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2" />
+            </div>
+            <div>
+              <label className="block  font-medium mb-1">Phone number</label>
+              <input
+                type="tel"
+                className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2" />
+            </div>
+
+            {/* Company and Country */}
+            <div>
+              <label className="block  font-medium mb-1">Company</label>
+              <input
+                type="text"
+                className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2" />
+            </div>
+            <div>
+              <label className="block font-medium mb-1">Country</label>
+              <select className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2 text-[#828282]">
+                <option value="">Choose country</option>
+                <option value="US">United States</option>
+                <option value="PAK">Pakistan</option>
+                <option value="ENG">England</option>
+                {/* Add more options */}
+              </select>
+            </div>
+
+            {/* City and Zip Code */}
+            <div>
+              <label className="block font-medium mb-1">City</label>
+              <select className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2 text-[#828282]">
+                <option value="">Choose city</option>
+                <option value="KAR">Karachi</option>
+                <option value="NY">New York</option>
+                <option value="LD">London</option>
+                {/* Add more options */}
+              </select>
+            </div>
+            <div>
+              <label className="block font-medium mb-1">Zip code</label>
+              <input
+                type="text"
+                className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2" />
+            </div>
+
+            {/* Address 1 and Address 2 */}
+            <div>
+              <label className="block  font-medium mb-1">Address 1</label>
+              <input
+                type="text"
+                className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2" />
+            </div>
+            <div>
+              <label className="block  font-medium mb-1">Address 2</label>
+              <input
+                type="text"
+                className="w-full border border-gray-300 h-14 lg:min-h-14 px-4 py-2" />
+            </div>
+          </form>
+
+          {/* Billing Address */}
+          <div className="mt-6 flex flex-col">
+            <h2 className="text-xl font-bold mb-1">Billing Address</h2>
+            <label className="inline-flex items-center">
+              <input type="checkbox" className="form-checkbox rounded-none border-gray-300" />
+              <span className="ml-2 text-sm">Same as shipping address</span>
+            </label>
           </div>
 
-          <div className="flex justify-between pt-4">
-            <button className="py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 w-72 h-12 px-3">
-              Back to cart
+          {/* Buttons */}
+          <div className="mt-8 flex justify-between gap-x-6">
+            <button className="w-full h-14 border border-[#E0E0E0] text-[#4F4F4F] justify-center flex items-center">
+              <Image src={CaretLeft} alt="Left" className="mr-1" /> Back to cart
             </button>
-            <button className="px-6 py-2 bg-orange-500 text-white rounded-md shadow-sm text-sm font-medium hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 w-72 h-12">
-            Proceed to shipping
+            <button className="w-full h-14 bg-[#FF9F0D] text-white justify-center flex items-center">
+              Proceed to shipping <Image src={CaretRight} alt="Right" className="ml-1" />
             </button>
           </div>
         </div>
 
-        {/* Right Column - Order Summary */}
-        <div className="p-6 rounded-lg border-2 border-gray-300">
-          <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-          <div className="space-y-4">
-            {[...Array(3)].map((item) => (
-              <div key={item} className="flex items-center space-x-4">
-                <div className="relative h-16 w-16">
+        {/* Right Section - Order Summary */}
+        <div className="w-1/3 lg:w-1/3 md:w-1/3 h-auto border border-[#E0E0E0] mb-6 px-6">
+          <div>
+            {/* Order Items */}
+            {[1, 2, 3].map((item, index) => (
+              <div key={index}>
+                <div className="flex items-center space-x-4 min-h-[104px] text-[#333333]">
                   <Image
-                    src= '/checkout.png'
-                    alt="Chicken Tikka Kebab"
-                    width={100} height={100}
-                    // fill
-                    className="rounded-md object-cover"
+                    src={Pic01}
+                    alt="Chicken Tikka Kabab"
+                    className="w-16 h-16 object-cover"
+                    width={82.72}
+                    height={88}
                   />
+                  <div>
+                    <p className="font-bold">Chicken Tikka Kabab</p>
+                    <p className="text-sm text-[#4F4F4F]">150 gm net</p>
+                    <p className="text-sm text-[#4F4F4F]">$5</p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-medium">Chicken Tikka Kebab</h3>
-                  <p className="text-sm text-gray-500">{150}</p>
-                  <p className="text-sm text-gray-500">{50}</p>
-                </div>
+                <hr className="border-t-1 border-[#E0E0E0] my-[10px]" />
               </div>
             ))}
           </div>
 
-          <div className="mt-6 space-y-2 border-t pt-4">
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-600">Subtotal</span>
-              <span className="font-medium">{130}</span>
+          {/* Summary Details */}
+          <div className="mt-7 space-y-4 text-[#4F4F4F]">
+            <div className="flex justify-between">
+              <span>Sub-total</span>
+              <span className="text-[#4F4F4F]">$130</span>
             </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-600">Shipping</span>
-              <span className="font-medium">{}</span>
+            <div className="flex justify-between">
+              <span>Shipping</span>
+              <span className="text-[#4F4F4F]">Free</span>
             </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-600">Discount</span>
-              <span className="font-medium">{25}</span>
+            <div className="flex justify-between">
+              <span>Discount</span>
+              <span className="text-[#4F4F4F]">25%</span>
             </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-600">Tax</span>
-              <span className="font-medium">{54.76}</span>
+            <div className="flex justify-between">
+              <span>Tax</span>
+              <span className="text-[#4F4F4F]">$54.76</span>
             </div>
-            <div className="flex justify-between border-t pt-2">
-              <span className="font-semibold">Total</span>
-              <span className="font-semibold">{432.65}</span>
+
+            <hr className="border-t-1 border-[#E0E0E0]" />
+
+            <div className="flex justify-between mt-1 text-[#333333] text-[18px] leading-[26px]">
+              <span>Total</span>
+              <span className="font-bold">$432.65</span>
             </div>
           </div>
 
-          <button className="w-full mt-6 px-6 py-3 bg-orange-500 text-white rounded-md shadow-sm text-sm font-medium hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-            Place an order
+          {/* Place Order Button */}
+          <button className="w-full h-14 bg-[#FF9F0D] mt-7 text-white rounded-md flex justify-center items-center">
+            Place an order <Image src={Arrow} alt="Arrow" className="ml-2" />
           </button>
         </div>
       </div>
-    </div>
-</div>
-
-</>
-  )
+    </section>
+  );
 }

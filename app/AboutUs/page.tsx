@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IoPlayOutline } from "react-icons/io5";
+// import { IoPlayOutline } from "react-icons/io5";
 import BgPic from "@/app/Components/BgPic";
 import Pic01 from "../Components/AboutUs/AboutUsPic01.jpg";
 import Pic02 from "../Components/Footer/Chicken.jpg";
@@ -98,7 +98,7 @@ export default function Aboutus() {
                 Show More
               </button>
               <button className="ml-4 inline-flex text-black  border-0 py-2 px-3 focus:outline-none rounded text-lg">
-                <IoPlayOutline className="mr-2 block" /> {/* Icon on the left */}
+                {/* <IoPlayOutline className="mr-2 block" /> Icon on the left */}
                 Watch video
               </button>
             </div>

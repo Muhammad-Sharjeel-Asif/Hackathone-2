@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { FaCheck } from 'react-icons/fa6'
+// import { FaCheck } from 'react-icons/fa6'
 import FoodCategory from '../FoodCategory/page'
 
 function Hero() {
@@ -67,19 +67,19 @@ function Hero() {
           <ul>
             <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
               <span className="mr-[10px]">
-                <FaCheck />
+                {/* <FaCheck /> */}
               </span>{" "}
               Lacus nisi, et ac dapibus sit eu velit in consequat.
             </li>
             <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
               <span className="mr-[10px]">
-                <FaCheck />
+                {/* <FaCheck /> */}
               </span>{" "}
               Quisque diam pellentesque bibendum non dui volutpat fringilla{" "}
             </li>
             <li className="text-[10px] md:text-[16px] font-normal mt-10 flex">
               <span className="mr-[10px]">
-                <FaCheck />
+                {/* <FaCheck /> */}
               </span>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </li>
