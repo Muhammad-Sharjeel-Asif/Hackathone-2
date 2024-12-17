@@ -16,8 +16,8 @@ const LatestProduct = () => {
             <h4 className="font-bold text-xl mb-4">Latest Product</h4>
 
             {initialCartItems.map((item, index) => (
-                <div>
-                    <div key={index} className="flex items-start">
+                <div key={index}>
+                    <div className="flex items-start">
                         <Image
                             src={item.image}
                             alt={item.name}
