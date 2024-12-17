@@ -11,7 +11,7 @@ import Pic04 from './Menu04.jpg'
 import { Coffee } from 'lucide-react';
 import BgPic from '@/app/Components/BgPic';
 import PartnersClients from '@/app/Components/Menu_Component/PartnerClientSec';
-import StateSection from '@/app/Components/Home Components/StateSection';
+import StateSection from '@/app/Components/HomeComponents/StatsSection';
 
 
 export default function StarterMenu() {
@@ -19,8 +19,6 @@ export default function StarterMenu() {
         <div className="bg-white font-sans text-[#333333]">
 
             <BgPic PageHeading='Our Menu' PageName='Menu' />
-
-            <StateSection />
 
             {/* Part 01 */}
             {/* Starter Menu */}
@@ -65,7 +63,7 @@ export default function StarterMenu() {
 
 
             {/* Main Course */}
-            <section className="w-full mx-auto sm:px-6 py-12 px-6 md:px-16 lg:px-28">
+            <section className="w-full mx-auto sm:px-6 pt-12 px-6 md:px-16 lg:px-28">
 
                 <div className="container mx-auto py-16 flex flex-col lg:flex-row gap-12">
 
@@ -105,10 +103,11 @@ export default function StarterMenu() {
                 </div>
             </section>
 
+            <StateSection />
 
             {/* Part 02 */}
             {/* Starter Menu */}
-            <section className="w-full mx-auto sm:px-6 px-6 md:px-16 lg:px-28">
+            <section className="w-full mx-auto pt-20 sm:px-6 px-6 md:px-16 lg:px-28">
 
                 <div className="container mx-auto flex flex-col lg:flex-row gap-12">
                     <div className="w-full lg:w-[448px] mb-8 lg:mb-0">

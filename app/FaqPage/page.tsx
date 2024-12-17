@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import Plus from '@/app/Public/Plus.png'
 import Minus from '@/app/Public/Minus.png'
 import Image from 'next/image';
+import Header from "../Components/Header"
+
 
 const faqData = [
   {
@@ -41,38 +43,41 @@ const FAQPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <BgPic PageHeading='FAQ page' PageName='faq' />
+    <>
+      <Header />
+      <div className="min-h-screen bg-gray-100">
+        <BgPic PageHeading='FAQ page' PageName='faq' />
 
-      <main className="mx-auto py-16 px-4 max-w-[1320px]">
-        <h2 className="text-5xl leading-[56px] font-bold text-center mb-8 text-[#333333]">Questions Looks Here</h2>
-        <p className="text-center text-[#4F4F4F] mb-12">
-          Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        </p>
+        <main className="mx-auto py-16 px-4 max-w-[1320px]">
+          <h2 className="text-5xl leading-[56px] font-bold text-center mb-8 text-[#333333]">Questions Looks Here</h2>
+          <p className="text-center text-[#4F4F4F] mb-12">
+            Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          </p>
 
-        <div className="grid gap-6 md:grid-cols-2 min-w-[648px] mb-8 text-[#333333] ">
-          {faqData.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-200"
-            >
+          <div className="grid gap-6 md:grid-cols-2 min-w-[648px] mb-8 text-[#333333] ">
+            {faqData.map((faq, index) => (
               <div
-                onClick={() => toggleFAQ(index)}
-                className="cursor-pointer flex flex-col w-full items-center px-4"
-              ><div className='flex w-[600px]  justify-between'>
-                  <h3 className="text-lg font-bold">{faq.question}</h3>
-                  <Image src={openIndex === index ? Minus : Plus} alt="Toggle Icon" width={24} height={24} />
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg transition-transform duration-200"
+              >
+                <div
+                  onClick={() => toggleFAQ(index)}
+                  className="cursor-pointer flex flex-col w-full items-center px-4"
+                ><div className='flex w-[600px]  justify-between'>
+                    <h3 className="text-lg font-bold">{faq.question}</h3>
+                    <Image src={openIndex === index ? Minus : Plus} alt="Toggle Icon" width={24} height={24} />
+                  </div>
+                  <article className='w-[600px] h-[72px]'>{faq.answer}</article>
                 </div>
-                <article className='w-[600px] h-[72px]'>{faq.answer}</article>
+                {openIndex === index && (
+                  <p className="text-sm text-gray-600 mt-4">{faq.answer}</p>
+                )}
               </div>
-              {openIndex === index && (
-                <p className="text-sm text-gray-600 mt-4">{faq.answer}</p>
-              )}
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
+            ))}
+          </div>
+        </main>
+      </div>
+    </>
   );
 };
 

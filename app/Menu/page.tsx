@@ -1,11 +1,11 @@
 import Menu from '@/app/Components/Menu_Component/Menu'
 import React from 'react'
-// import Hero from '../hero/page'
+import Header from "../Components/Header"
 
 function page() {
   return (
     <div>
-        {/* <Hero/> */}
+        <Header/>
         <Menu />
     </div>
   )

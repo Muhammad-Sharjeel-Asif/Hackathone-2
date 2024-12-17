@@ -18,7 +18,7 @@ const BgPic: React.FC<BgPicProps> = ({ PageHeading, PageName }) => {
   <div className="text-center text-white">
     <h2 className="text-4xl font-bold mt-11">{ PageHeading }</h2>
     <p className="mt-4 text-xl">
-      <Link href="/">Home › <span className="text-[#FF9F0D]">{ PageName }</span> </Link>
+      <Link href={"/"}>Home</Link> › <span className="text-[#FF9F0D]">{ PageName }</span>
     </p>
   </div>
 </section>
