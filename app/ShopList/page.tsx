@@ -34,13 +34,13 @@ const shopProducts = [
     { id: 15, name: "Chicken Chup", price: 12, image: Pic09 },
 ];
 
-export default function Home() {
+export default function ShopList() {
     return (
         <>
             <Header />
             <section className="bg-white font-sans text-[#333333]">
 
-                <BgPic PageHeading='Checkout Page' PageName='Checkout' />
+                <BgPic PageHeading='Our Shop' PageName='Shop' />
 
                 {/* <div className="flex flex-col md:flex-row */}
                 <div className="bg-white min-h-screen px-24 py-20 gap-x-8 text-[#333333]">

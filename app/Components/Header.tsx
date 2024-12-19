@@ -16,7 +16,7 @@ export default function Header() {
                     <Link href={"/Blog"} className="font">Blog</Link>
                     <Link href={"/Pages"} className="font">Pages</Link>
                     <Link href={"/About"} className="font">About</Link>
-                    <Link href={"/OurShop"} className="font">Shop</Link>
+                    <Link href={"/ShopList"} className="font">Shop</Link>
                     <Link href={"/Contact"} className="font">Contact</Link>
                 </nav>
                 <div className="flex h-6 gap-x-3">

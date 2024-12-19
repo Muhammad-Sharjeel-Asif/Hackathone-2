@@ -8,6 +8,7 @@ import BlogSection from './Components/HomeComponents/BlogSection'
 import StatsSection from './Components/HomeComponents/StatsSection'
 import MenuSection from './Components/HomeComponents/MenuSection'
 import WhyChooseUs from "./Components/HomeComponents/WhyChooseUs"
+import ResActivator from './Components/HomeComponents/ResActivator'
 
 function page() {
   return (
@@ -20,6 +21,7 @@ function page() {
       <MenuSection />
       <MeetOurChef />
       <Testimonial />
+      <ResActivator />
       <BlogSection />
     </div>
   )
