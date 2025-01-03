@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0d0d;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,6 +31,6 @@ body {
 }
 
 .font{
-  @apply font-normal hover:font-bold text-[16px] leading-6 text-[#FFFFFF] hover:text-[#FF9F0D]
+  @apply font-normal text-[16px] leading-6 text-[#FFFFFF] hover:text-[#FF9F0D]
 }
 

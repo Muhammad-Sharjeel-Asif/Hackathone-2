@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "./Components/Footer";
+import StateContext from "./context/StateContext";
+import { Toaster } from "react-hot-toast";
 // import Header from "./Components/Header";
 
 const geistSans = localFont({
@@ -30,8 +32,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <Header /> */}
-        {children}
+        <StateContext>
+          <Toaster />
+          <main>{children}</main>
+        </StateContext>
         <Footer />
       </body>
     </html>

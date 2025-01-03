@@ -1,33 +1,42 @@
-import Image from "next/image";
-import Pic01 from "./HomeChef01.jpg"
-import Pic02 from "./HomeChef02.jpg"
-import Pic03 from "./HomeChef03.jpg"
-import Pic04 from "./HomeChef04.jpg"
+"use client";
 
+import { urlFor } from "@/sanity/lib/image";
+import React, { useState } from "react";
+import Image from "next/image";
+import { fetchChefs } from "@/sanity/utils";
+import { chefProp } from "../Chef_components/ChefSection";
+import { useEffect } from "react";
+import Link from "next/link";
 
 const MeetOurChef = () => {
-  const chefs = [
-    {
-      name: "D. Estwood",
-      role: "Chef Chef",
-      image: Pic01
-    },
-    {
-      name: "D. Scoriech",
-      role: "Assistant Chef",
-      image: Pic02
-    },
-    {
-      name: "M. William",
-      role: "Advertising Chef",
-      image: Pic03
-    },
-    {
-      name: "W. Readfroad",
-      role: "Chef",
-      image: Pic04
-    },
-  ];
+  const [chefData, setChefData] = useState<chefProp[]>([]);
+  const [startIndex, setStartIndex] = useState(0);
+  const chefsPerPage = 4;
+  const intervalTime = 5000;
+
+
+  // Fetch chefs on component mount
+  useEffect(() => {
+    const getChefs = async () => {
+      const data = await fetchChefs();
+      setChefData(data);
+    };
+    getChefs();
+  }, []);
+
+  // Automatically cycle through chefs
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prevIndex) =>
+        prevIndex + chefsPerPage >= chefData.length ? 0 : prevIndex + chefsPerPage
+      );
+    }, intervalTime);
+
+    return () => clearInterval(interval); // Clear interval on unmount
+  }, [chefData.length]);
+
+  // Calculate the chefs to display
+  const visibleChefs = chefData.slice(startIndex, startIndex + chefsPerPage);
 
   return (
     <section className="mx-28 text-white pb-12 px-6">
@@ -40,34 +49,32 @@ const MeetOurChef = () => {
 
         {/* Chef Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {chefs.map((chef, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden"
-            >
+          {visibleChefs.map((chef: chefProp, index: number) => (
+            <div key={index} className="relative overflow-hidden aspect-[4/5]">
               {/* Chef Image */}
               <Image
-                src={chef.image}
+                src={urlFor(chef.image).url()}
                 alt={chef.name}
+                fill
                 className="w-full h-[391px] object-cover rounded-md"
               />
 
               {/* Overlay for Name and Role */}
               <div className="absolute bottom-0 left-0 w-[181px] h-[67px] bg-gradient-to-t bg-white to-transparent text-[#333333] py-2 px-4 rounded-bl-md">
-                <h3 className="text-left text-lg font-bold leading-tight">{chef.name}</h3>
-                <p className="text-left text-sm">{chef.role}</p>
+                <h3 className="text-left text-lg font-bold leading-tight">
+                  {chef.name}
+                </h3>
+                <p className="text-left text-sm">{chef.designation}</p>
               </div>
-
             </div>
           ))}
         </div>
 
-
         {/* See More Button */}
         <div className="mt-12">
-          <button className="bg-transparent border border-[#FF9F0D] text-white py-2 px-4 rounded-full w-[155px] h-[50px]">
+          <Link href="/Chef" className="bg-transparent border border-[#FF9F0D] text-white py-2 px-4 rounded-full w-[155px] h-[50px]">
             See More
-          </button>
+          </Link>
         </div>
       </div>
     </section>

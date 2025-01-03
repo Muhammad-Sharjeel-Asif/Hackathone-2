@@ -9,7 +9,7 @@ import Calender from "./Calendar.png"
 import Chats from "./Chats.png"
 import User from "./UserCirclePlus.png"
 import Pagination from "../ShopComponents/Pagination";
-import Glass from "@/app/Public/MagnifyingGlass.png"
+import Sidebar from "./Sidebar";
 
 const BlogPost = [
   { title: "10 Reasons To Do A Digital Detox Challenge", image: Pic01 },
@@ -31,8 +31,8 @@ const BlogLayout = () => {
                   src={post.image}
                   alt={post.title}
                   className="w-full h-[520px] object-cover"
-                  width={500}
-                  height={300}
+                  // width={500}
+                  // height={300}
                 />
                 {/* Date Badge */}
                 <div className="absolute top-4 left-4 bg-[#FF9F0D] w-[59.93px] h-[60px] text-white rounded-md">
@@ -79,69 +79,7 @@ const BlogLayout = () => {
         </main>
 
         {/* Sidebar */}
-        <aside className="w-full lg:w-1/3">
-          {/* Author Bio */}
-          <div className='flex border border-[#E0E0E0] w-full justify-between'>
-            <input
-              type="text"
-              placeholder="Search Your Keword.."
-              className=" placeholder:pl-6" />
-            <span><Image src={Glass} alt='Glass' className='bg-[#FF9F0D] h-[60px] p-5 w-[66px]' /></span>
-          </div>
-
-
-
-
-          <div className="bg-white shadow rounded-md p-4 mb-8">
-            <Image
-              src={Pic02}
-              alt="Author profile"
-              className="rounded-full mx-auto mb-4"
-            />
-            <h3 className="text-center text-gray-800 font-semibold">John Doe</h3>
-            <p className="text-center text-gray-600">
-              Food enthusiast sharing recipes and tips for healthy eating.
-            </p>
-          </div>
-
-          {/* Categories */}
-          <div className="bg-white shadow rounded-md p-4 mb-8">
-            <h4 className="text-gray-800 font-semibold mb-4">Categories</h4>
-            <ul className="space-y-2">
-              {["Breakfast", "Lunch", "Dinner", "Snacks", "Desserts"].map((category) => (
-                <li key={category}>
-                  <a
-                    href="#"
-                    className="text-gray-700 hover:text-orange-500"
-                  >
-                    {category}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Recent Posts */}
-          <div className="bg-white shadow rounded-md">
-            <h4 className="text-gray-800 font-semibold mb-4">Recent Posts</h4>
-            <ul className="space-y-4">
-              {[1, 2, 3].map((post) => (
-                <li key={post}>
-                  <a href="#" className="flex space-x-4 items-center">
-                    <Image
-                      src={Pic03}
-                      alt="Thumbnail"
-                      className="w-16 h-16 object-cover rounded"
-                    />
-                    <span className="text-gray-700 hover:text-orange-500">
-                      Quick and Easy Recipe Title
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
+        <Sidebar />
       </div>
 
       <div className="pb-20">
